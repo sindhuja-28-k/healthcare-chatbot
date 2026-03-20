@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Healthcare Chatbot</title>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+
+</head>
+
+<body>
+
+<header class="header">
+<h1>Healthcare Chatbot System</h1>
+<p>Your virtual health assistant</p>
+</header>
+
+<div class="chat-container">
+
+<div class="chat-header">
+Chat with Health Assistant
+</div>
+
+<div id="chatBox" class="chat-box"></div>
+
+<div class="quick-buttons">
+<button onclick="quickQuestion('fever')">Fever</button>
+<button onclick="quickQuestion('cold')">Cold</button>
+<button onclick="quickQuestion('headache')">Headache</button>
+<button onclick="quickQuestion('cough')">Cough</button>
+</div>
+
+<div class="chat-input">
+
+<textarea id="userInput" placeholder="Ask your health question" rows="1" onkeyup="showSuggestions()" onkeydown="handleEnter(event)" oninput="autoGrow(this)"></textarea>
+<div id="suggestions" class="suggestions"></div>
+
+<button onclick="startVoice()">🎤</button>
+
+<button onclick="sendMessage()">Send</button>
+
+<button onclick="clearChat()">Clear</button>
+
+<button onclick="downloadChat()">Download Report</button>
+
+</div>
+
+</div>
+
+<div class="tips-section">
+
+<h2>Daily Health Tips</h2>
+
+<ul>
+<li>Drink at least 8 glasses of water daily</li>
+<li>Exercise for 30 minutes every day</li>
+<li>Eat healthy fruits and vegetables</li>
+<li>Sleep at least 7–8 hours daily</li>
+<li>Avoid junk food and stress</li>
+</ul>
+
+</div>
+
+<footer class="footer">
+
+<p>Healthcare Chatbot Project | Developed using Django</p>
+
+<p style="color:red;">
+This chatbot provides general health information only.  
+Consult a doctor for professional medical advice.
+</p>
+
+</footer>
+
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+</body>
+
+</html>
